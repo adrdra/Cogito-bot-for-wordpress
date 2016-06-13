@@ -22,8 +22,8 @@ class CogitoBot_Install {
 		}
 
 		self::create_tables();
+		self::add_capabilities();
 	}
-
 
 	/**
 	 * Set up the database tables which the plugin needs to function.
@@ -65,6 +65,20 @@ class CogitoBot_Install {
 			) $collate;";
 
 		return $tables;
+	}
+
+	private static function add_capabilities() {
+		global $wp_roles;
+
+		if ( ! class_exists( 'WP_Roles' ) ) {
+			return;
+		}
+
+		if ( ! isset( $wp_roles ) ) {
+			$wp_roles = new WP_Roles();
+		}
+
+		$wp_roles->add_cap( 'administrator', 'manage_cogitobot' );
 	}
 }
 
