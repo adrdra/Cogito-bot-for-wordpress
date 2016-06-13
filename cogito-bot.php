@@ -26,6 +26,11 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
   exit;
 }
 
+// if ( (float)$GLOBALS['woocommerce']->version < 2.6 ) {
+//   echo 'Sorry ! You can\'t use this plugin. You need to use a greater version of WooCommerce.';
+//   exit;
+// }
+
 if ( ! class_exists('Cogito_Bot') ) :
 
 final class CogitoBot {
@@ -43,7 +48,7 @@ final class CogitoBot {
 		$this->includes();
 		$this->init_hooks();
 
-    do_action( 'cogito-init' );
+    do_action( 'cogito-install' );
 	}
 
   /**
@@ -75,7 +80,6 @@ final class CogitoBot {
    * @since  2.3
    */
   private function init_hooks() {
-    // On registration
     register_activation_hook( __FILE__, array( 'CogitoBot_Install', 'install' ) );
 
     // add_action( 'after_setup_theme', array( $this, 'setup_environment' ) );
