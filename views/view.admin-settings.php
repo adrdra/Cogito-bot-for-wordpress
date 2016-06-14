@@ -10,4 +10,8 @@
     </div>
     <h2 class="center">Améliorer l'expérience de recherche et le taux de succès de votre site e-commerce</h2>
   </div>
+
+  <div class="cogito-panel">
+
+  </div>
 </div>

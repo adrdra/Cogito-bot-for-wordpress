@@ -45,3 +45,12 @@ h2 {
   max-width: 560px;
   text-align: center;
 }
+
+/***
+  Panel
+***/
+.cogito-panel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
