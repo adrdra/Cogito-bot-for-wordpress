@@ -36,3 +36,11 @@
     </div>
   </div>
 </div>
+
+<!-- <div class="modal-mask">
+
+</div>
+
+<div class="modal center">
+  <?php include_once( 'modals/modal.connect_facebook.php' ); ?>
+</div> -->
