@@ -58,7 +58,7 @@ final class CogitoBot {
     $this->define( 'COGITO_BOT_NAME', 'cogito-bot' );
     $this->define( 'COGITO_BOT_VERSION', '1.0.0' );
     $this->define( 'COGITO_BOT__MINIMUM_WP_VERSION', '3.1' );
-    $this->define( 'COGITO_BOT__MINIMUM_WC_VERSION', '2.6');
+    $this->define( 'COGITO_BOT__MINIMUM_WC_VERSION', '2.7');
     $this->define( 'COGITO_BOT__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
     $this->define( 'COGITO_BOT__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
     $this->define( 'COGITO_BOT_DELETE_LIMIT', 100000 );

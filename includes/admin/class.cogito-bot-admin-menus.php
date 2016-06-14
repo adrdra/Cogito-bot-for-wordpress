@@ -52,7 +52,7 @@ class CogitoBot_Admin_Menus {
 	}
 
 	private function is_good_wc_version() {
-		if ( (float)$GLOBALS['woocommerce']->version < 2.7 ) return false;
+		if ( (float)$GLOBALS['woocommerce']->version < COGITO_BOT__MINIMUM_WC_VERSION ) return false;
 		return true;
 	}
 }
