@@ -3,7 +3,7 @@
 
     <div
       class="sad-cogito img-background"
-      style="background-image: url(<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/logo.png' ?>)">
+      style="background-image: url(<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/cogito_error.png' ?>)">
     </div>
 
     <span class="oops">Oops !</span>
