@@ -2,11 +2,11 @@
 
 <div class="cogito-layout">
   <div
-    class="cogito-banner"
+    class="cogito-banner img-background"
     style="background-image: url(<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/bandeau.png' ?>)">
 
     <div
-      class="cogito-logo"
+      class="cogito-logo img-background"
       style="background-image: url(<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/logo.png' ?>)">
 
     </div>

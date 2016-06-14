@@ -5,16 +5,12 @@
 .cogito-banner {
   width: 100%;
   height: 150px;
-  background-position: center;
-  background-size: cover;
   position: relative;
 }
 
 .cogito-logo {
   height: 150px;
   width: 150px;
-  background-position: center;
-  background-size: cover;
 }
 
 .cogito-banner h1 {

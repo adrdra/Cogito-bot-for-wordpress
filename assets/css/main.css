@@ -10,6 +10,14 @@
 .horizontal-center {
   position: absolute;
   left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+.vertical-center {
+  position: absolute;
+  left: 50%;
   transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -23,4 +31,16 @@ h1 {
 
 .cogito-layout {
   width: 100%;
+}
+
+.img-background {
+  background-position: center;
+  background-size: cover;
+}
+
+.btn {
+  padding: 15px 25px 15px 25px;
+  background-color: #ffe814;
+  font-size: 16px;
+  border-radius: 30px;
 }
