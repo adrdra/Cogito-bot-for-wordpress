@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+if ( ! class_exists( 'CogitoBot_Admin' ) ) :
+
 class CogitoBot_Admin {
 
   /**
@@ -20,13 +22,7 @@ class CogitoBot_Admin {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'includes' ) );
-		// add_action( 'current_screen', array( $this, 'conditional_includes' ) );
-		// add_action( 'admin_init', array( $this, 'buffer' ), 1 );
-		// add_action( 'admin_init', array( $this, 'preview_emails' ) );
-		// add_action( 'admin_init', array( $this, 'prevent_admin_access' ) );
-		// add_action( 'admin_init', array( $this, 'admin_redirects' ) );
-		// add_action( 'admin_footer', 'wc_print_js', 25 );
-		// add_filter( 'admin_footer_text', array( $this, 'admin_footer_text' ), 1 );
+		add_action( 'current_screen', array( $this, 'conditional_includes' ) );
 	}
 
   /**
@@ -36,6 +32,21 @@ class CogitoBot_Admin {
     include_once( 'class.cogito-bot-admin-menus.php' );
   }
 
+	public function conditional_includes() {
+		if ( ! $screen = get_current_screen() ) {
+			return;
+		}
+
+		switch ( $screen->id ) {
+			case 'toplevel_page_cogitobot' :
+				include_once( 'class.cogito-bot-admin-dashboard.php' );
+				break;
+		}
+
+	}
+
 }
+
+endif;
 
 return new CogitoBot_Admin();

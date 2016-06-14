@@ -81,10 +81,6 @@ final class CogitoBot {
    */
   private function init_hooks() {
     register_activation_hook( __FILE__, array( 'CogitoBot_Install', 'install' ) );
-
-    // add_action( 'after_setup_theme', array( $this, 'setup_environment' ) );
-    // add_action( 'after_setup_theme', array( $this, 'include_template_functions' ), 11 );
-    // add_action( 'init', array( $this, 'init' ), 0 );
   }
 
   /**

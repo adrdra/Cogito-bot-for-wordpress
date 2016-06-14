@@ -29,7 +29,24 @@ class CogitoBot_Admin_Menus {
 			$menu[] = array( '', 'read', 'separator-cogitobot', '', 'wp-menu-separator cogitobot' );
 		}
 
-		add_menu_page( __( 'CogitoBot', 'cogitobot' ), __( 'CogitoBot', 'cogitobot' ), 'manage_cogitobot', 'cogitobot', null, null, '60' );
+		add_menu_page(
+			__( 'CogitoBot', 'cogitobot' ),
+			__( 'CogitoBot', 'cogitobot' ),
+			'manage_cogitobot',
+			'admin.php?page=cogito',
+			array( $this, 'settings_page' ),
+			null,
+			'60'
+		);
+	}
+
+	/**
+	 * Init the attributes page.
+	 */
+	public function settings_page() {
+		include_once('class.cogito-bot-admin-settings.php');
+		
+		CogitoBot_Admin_Settings::output();
 	}
 }
 
