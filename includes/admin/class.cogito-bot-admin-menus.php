@@ -44,9 +44,16 @@ class CogitoBot_Admin_Menus {
 	 * Init the attributes page.
 	 */
 	public function settings_page() {
-		include_once('class.cogito-bot-admin-settings.php');
-		
-		CogitoBot_Admin_Settings::output();
+		if ( $this->is_good_wc_version() ) {
+			CogitoBot_Admin_Settings::output();
+		} else {
+			CogitoBot_Admin_Error_WC_Version::output();
+		}
+	}
+
+	private function is_good_wc_version() {
+		if ( (float)$GLOBALS['woocommerce']->version < 2.7 ) return false;
+		return true;
 	}
 }
 

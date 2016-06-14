@@ -23,6 +23,7 @@ class CogitoBot_Install {
 
 		self::create_tables();
 		self::add_capabilities();
+		self::enqueue_scripts();
 	}
 
 	/**
@@ -79,6 +80,14 @@ class CogitoBot_Install {
 		}
 
 		$wp_roles->add_cap( 'administrator', 'manage_cogitobot' );
+	}
+
+	private static function enqueue_scripts() {
+		wp_register_style( 'cogito-main-style', COGITO_BOT__PLUGIN_URL .'assets/css/main.css' );
+		wp_enqueue_style( 'cogito-main-style' );
+
+		wp_register_script( 'cogito-main-script', COGITO_BOT__PLUGIN_URL . 'assets/js/main.js', array('jquery') );
+		wp_enqueue_script( 'cogito-main-script' );
 	}
 }
 

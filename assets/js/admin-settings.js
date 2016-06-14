@@ -1,4 +1,3 @@
-
 (function( root, $, undefined ) {
 	"use strict";
 
@@ -9,7 +8,7 @@
     $('.cogito-panel').css({
       minHeight: panelHeight
     });
-    
+
 	});
 
 } ( this, jQuery ));

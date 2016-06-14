@@ -22,7 +22,6 @@ class CogitoBot_Admin {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'includes' ) );
-		add_action( 'current_screen', array( $this, 'conditional_includes' ) );
 	}
 
   /**
@@ -30,20 +29,9 @@ class CogitoBot_Admin {
 	 */
   public function includes() {
     include_once( 'class.cogito-bot-admin-menus.php' );
+		include_once('class.cogito-bot-admin-settings.php');
+		include_once('class.cogito-bot-admin-error-wc-version.php');
   }
-
-	public function conditional_includes() {
-		if ( ! $screen = get_current_screen() ) {
-			return;
-		}
-
-		switch ( $screen->id ) {
-			case 'toplevel_page_cogitobot' :
-				include_once( 'class.cogito-bot-admin-dashboard.php' );
-				break;
-		}
-
-	}
 
 }
 
