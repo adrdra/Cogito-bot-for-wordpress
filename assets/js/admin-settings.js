@@ -3,6 +3,12 @@
 	"use strict";
 
 	$(function () {
+    var heightLimit = $('.cogito-banner').height() - $('#wpfooter').height();
+    var panelHeight = $(window).height() - heightLimit;
+
+    $('.cogito-panel').css({
+      minHeight: panelHeight
+    });
     
 	});
 

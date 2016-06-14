@@ -10,7 +10,15 @@
   -webkit-transform: translate(-50%, -50%);
 }
 
-h2 {
+.horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+h1 {
   font-weight: lighter;
   font-size: 24px;
   line-height: 26px;
@@ -39,7 +47,7 @@ h2 {
   background-size: cover;
 }
 
-.cogito-banner h2 {
+.cogito-banner h1 {
   margin: 0;
   color: white;
   max-width: 560px;
@@ -53,4 +61,20 @@ h2 {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.title-panel {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  margin-top: 50px;
+  margin-bottom: 5px;
+}
+
+.date-panel {
+  width: 100%;
+  display: block;
+  text-align: center;
 }
