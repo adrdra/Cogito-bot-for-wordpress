@@ -21,4 +21,8 @@
       <?php } ?>
     </div>
   </div>
+
+  <a href="#">
+    <span class="btn">Connecter la page</span>
+  </a>
 </div>
