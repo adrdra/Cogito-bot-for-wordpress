@@ -33,7 +33,7 @@ class CogitoBot_Admin_Menus {
 			__( 'CogitoBot', 'cogitobot' ),
 			__( 'CogitoBot', 'cogitobot' ),
 			'manage_cogitobot',
-			'admin.php?page=cogito',
+			'cogito-admin-page.php',
 			array( $this, 'settings_page' ),
 			null,
 			'60'
@@ -44,16 +44,14 @@ class CogitoBot_Admin_Menus {
 	 * Init the attributes page.
 	 */
 	public function settings_page() {
-		if ( $this->is_good_wc_version() ) {
+		include_once( COGITO_BOT__PLUGIN_DIR . 'includes/helpers/class.cogito-wc-helpers.php' );
+		Cogito_WC_Helpers::is_wc_api_activated();
+
+		if ( is_good_wc_version() ) {
 			CogitoBot_Admin_Settings::output();
 		} else {
 			CogitoBot_Admin_Error_WC_Version::output();
 		}
-	}
-
-	private function is_good_wc_version() {
-		if ( (float)$GLOBALS['woocommerce']->version < COGITO_BOT__MINIMUM_WC_VERSION ) return false;
-		return true;
 	}
 }
 

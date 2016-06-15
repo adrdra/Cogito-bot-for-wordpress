@@ -29,8 +29,9 @@ class CogitoBot_Admin {
 	 */
   public function includes() {
     include_once( 'class.cogito-bot-admin-menus.php' );
-		include_once('class.cogito-bot-admin-settings.php');
-		include_once('class.cogito-bot-admin-error-wc-version.php');
+		include_once( 'class.cogito-bot-admin-settings.php' );
+		include_once( 'class.cogito-bot-admin-error-wc-version.php' );
+		include_once( COGITO_BOT__PLUGIN_DIR . 'includes/helpers/cogito-admin-helpers.php' );
   }
 
 }
