@@ -57,8 +57,9 @@ class CogitoBot_Api {
     return 'buy_cart';
   }
 
-  public function subscribe_app() {
-    return Subscribe_App_Controller::sbscribe();
+  public function subscribe_app( $request ) {
+    $params = $request->get_params();
+    return Subscribe_App_Controller::subscribe( $params );
   }
 }
 
