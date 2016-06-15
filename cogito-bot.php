@@ -58,6 +58,7 @@ final class CogitoBot {
     $this->define( 'COGITO_BOT__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
     $this->define( 'COGITO_BOT_DELETE_LIMIT', 100000 );
     $this->define( 'COGITOAPP_DOMAIN_URL', 'http://cogito-bot.herokuapp.com' );
+    $this->define( 'COGITOBOT_ADMIN_PATH', 'admin.php?page=cogito-admin-page.php');
     $this->define( 'COGITOBOT_CUSTOMER_TYPE', 'woocommerce' );
     $this->define( 'COGITOBOT_FACEBOOK_AUTH_URL', '/customers/authorize/facebook' );
 	}

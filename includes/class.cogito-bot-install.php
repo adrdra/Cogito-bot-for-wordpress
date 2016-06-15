@@ -59,11 +59,6 @@ class CogitoBot_Install {
 		$tables = "
 			CREATE TABLE {$wpdb->prefix}cogito_bot_customer (
 				cogito_id varchar(200) NOT NULL,
-				facebook_id varchar(100) NOT NULL,
-				facebook_access_token varchar(1000) NOT NULL,
-				wc_consumer_key varchar(1000) NOT NULL,
-				wc_consumer_secret varchar(1000) NOT NULL,
-				UNIQUE KEY facebook_id (facebook_id),
 				PRIMARY KEY  (cogito_id)
 			) $collate;";
 

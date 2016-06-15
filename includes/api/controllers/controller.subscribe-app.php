@@ -16,7 +16,7 @@ class Subscribe_App_Controller {
 
   public static function validate_params( $params ) {
     if ( ! $params['consumerKey'] && ! $params['consumerSecret']  ) {
-      wp_redirect( admin_url() . 'admin.php?page=cogito-admin-page.php' );
+      wp_redirect( admin_url() . COGITOBOT_ADMIN_PATH );
       exit;
     }
   }
