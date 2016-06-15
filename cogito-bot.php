@@ -60,7 +60,8 @@ final class CogitoBot {
     $this->define( 'COGITOAPP_DOMAIN_URL', 'http://cogito-bot.herokuapp.com' );
     $this->define( 'COGITOBOT_ADMIN_PATH', 'admin.php?page=cogito-admin-page.php');
     $this->define( 'COGITOBOT_CUSTOMER_TYPE', 'woocommerce' );
-    $this->define( 'COGITOBOT_FACEBOOK_AUTH_URL', '/customers/authorize/facebook' );
+    $this->define( 'COGITOBOT_SUBSCRIBE_APP_ROUTE', "/wp-json/cogito-plugin/subscribe-app");
+    $this->define( 'COGITOBOT_FACEBOOK_AUTH_ROUTE', '/customers/authorize/facebook' );
 	}
 
   /**

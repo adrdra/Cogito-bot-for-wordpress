@@ -10,7 +10,7 @@ class Subscribe_App_Controller {
 
     $http_params = http_build_query( $sanitized_params );
 
-    wp_redirect( COGITOAPP_DOMAIN_URL . COGITOBOT_FACEBOOK_AUTH_URL . '?' . $http_params );
+    wp_redirect( COGITOAPP_DOMAIN_URL . COGITOBOT_FACEBOOK_AUTH_ROUTE . '?' . $http_params );
     exit;
   }
 
