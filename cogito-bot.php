@@ -68,7 +68,9 @@ final class CogitoBot {
    * Include CogitoBot needed files.
    */
   private function includes() {
-    include_once('includes/class.cogito-bot-install.php');
+    include_once( ABSPATH . WPINC . '/rest-api.php' );
+    include_once( 'includes/class.cogito-bot-install.php' );
+    include_once( 'includes/api/class.cogito-bot-api.php' );
 
     if ( $this->is_request('admin') ) :
       include_once( 'includes/admin/class.cogito-bot-admin.php' );
