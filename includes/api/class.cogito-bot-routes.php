@@ -9,7 +9,6 @@ class CogitoBot_Api {
   }
 
   public function includes() {
-    include_once( COGITO_BOT__PLUGIN_DIR . 'includes/helpers/class.cogito-wc-helpers.php' );
     include_once( 'controllers/controller.facebook-auth-redirect.php' );
     include_once( 'controllers/controller.buy-cart.php' );
     include_once( 'controllers/controller.subscribe-app.php' );
@@ -50,8 +49,8 @@ class CogitoBot_Api {
     );
   }
 
-  public function facebook_auth_redirect() {
-    return 'facebook_auth_redirect';
+  public function facebook_auth_redirect( $request ) {
+    return Facebook_Auth_Redirect_Controller::redirect( $this->current_url() );
   }
 
   public function buy_cart() {
@@ -59,8 +58,16 @@ class CogitoBot_Api {
   }
 
   public function subscribe_app( $request ) {
-    $params = $request->get_params();
-    return Subscribe_App_Controller::subscribe( $params );
+    return Subscribe_App_Controller::subscribe( $request->get_params() );
+  }
+
+  private function current_url() {
+    $protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') === FALSE ? 'http' : 'https';
+    $host     = $_SERVER['HTTP_HOST'];
+    $script   = $_SERVER['SCRIPT_NAME'];
+    $params   = $_SERVER['QUERY_STRING'];
+
+    return $protocol . '://' . $host . $script . '?' . $params;
   }
 }
 

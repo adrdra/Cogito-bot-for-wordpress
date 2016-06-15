@@ -14,7 +14,7 @@ function create_query_url($params) {
   return "{$current}&{$query}";
 };
 
-function currentUrl() {
+function current_url() {
   $protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') === FALSE ? 'http' : 'https';
   $host     = $_SERVER['HTTP_HOST'];
   $script   = $_SERVER['SCRIPT_NAME'];
