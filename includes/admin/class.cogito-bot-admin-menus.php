@@ -48,7 +48,7 @@ class CogitoBot_Admin_Menus {
 		Cogito_WC_Helpers::is_wc_api_activated();
 
 		if ( is_good_wc_version() ) {
-			CogitoBot_Admin_Settings::output();
+			CogitoBot_Admin_Actions::get_action();
 		} else {
 			CogitoBot_Admin_Error_WC_Version::output();
 		}
