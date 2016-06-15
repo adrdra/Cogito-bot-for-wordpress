@@ -9,6 +9,7 @@ class CogitoBot_Api {
   }
 
   public function includes() {
+    include_once( COGITO_BOT__PLUGIN_DIR . 'includes/helpers/class.cogito-wc-helpers.php' );
     include_once( 'controllers/controller.facebook-auth-redirect.php' );
     include_once( 'controllers/controller.buy-cart.php' );
     include_once( 'controllers/controller.subscribe-app.php' );

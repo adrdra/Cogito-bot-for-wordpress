@@ -26,3 +26,7 @@ function currentUrl() {
 function redirect_request($url) {
   wp_redirect( $url );
 }
+
+function cogito_admin_url() {
+  return admin_url() . '/admin.php?page=cogito-admin-page.php';
+}
