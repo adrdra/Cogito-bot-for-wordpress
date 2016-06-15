@@ -37,10 +37,21 @@
   </div>
 </div>
 
-<!-- <div class="modal-mask">
+<?php if ( $_GET['action'] == 'select_page' || $_GET['action'] == 'subscribe_to_cogito' ) : ?>
+  <div class="modal-mask">
 
-</div>
+  </div>
 
-<div class="modal center">
-  <?php include_once( 'modals/modal.connect_facebook.php' ); ?>
-</div> -->
+  <div class="modal center">
+    <?php
+      switch ( $_GET['action'] ) {
+        case 'select_page':
+          include_once( 'modals/modal.select_facebook_page.php' );
+          break;
+        default:
+          include_once( 'modals/modal.connect_facebook.php' );
+          break;
+      }
+     ?>
+  </div>
+<?php endif; ?>
