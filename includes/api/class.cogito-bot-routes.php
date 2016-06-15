@@ -58,7 +58,7 @@ class CogitoBot_Api {
   }
 
   public function subscribe_app() {
-    return Subscribe_App_Controller::index();
+    return Subscribe_App_Controller::sbscribe();
   }
 }
 
