@@ -1,0 +1,21 @@
+.select-page {
+  width: 80%;
+  height: 150px;
+  margin: auto;
+}
+
+.pages-items {
+  width: 100%;
+  height: 100%;
+}
+
+.pages-item {
+  width: 125px;
+  height: 150px;
+}
+
+.page-icon {
+  width: 125px;
+  height: 125px;
+  border-radius: 10px;
+}

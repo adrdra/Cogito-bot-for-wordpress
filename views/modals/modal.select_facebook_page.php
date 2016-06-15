@@ -8,15 +8,18 @@
 
 <div class="modal-content">
   <div class="select-page">
-    <div class="">
+    <div class="page-items">
       <?php foreach ($pages as $page) { ?>
         <?php if ( in_array( 'ADMINISTER', $page->perms ) ) : ?>
-          <div
-            id="<?php echo $page->id ?>"
-            data-token="<?php echo $page->access_token ?>"
-            style="background-image: url(<?php echo "http://graph.facebook.com/v2.6/{$page->id}/picture" ?>)">
+          <div class="page-item">
+            <div
+              class="page-icon img-background"
+              id="<?php echo $page->id ?>"
+              data-token="<?php echo $page->access_token ?>"
+              style="background-image: url(<?php echo "http://graph.facebook.com/v2.6/{$page->id}/picture" ?>)">
+            </div>
+            <span><?php echo $page->name ?></span>
           </div>
-          <span><?php echo $page->name ?></span>
         <?php endif; ?>
       <?php } ?>
     </div>

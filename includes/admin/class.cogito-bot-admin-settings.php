@@ -15,6 +15,9 @@ class CogitoBot_Admin_Settings {
    * The added attributes are stored in the database and can be used for layered navigation.
    */
   public static function output() {
+		wp_register_style( 'bootstrap', COGITO_BOT__PLUGIN_URL .'assets/css/lib/bootstrap.min.css');
+		wp_enqueue_style( 'bootstrap' );
+
 		wp_register_style( 'admin-settings-style', COGITO_BOT__PLUGIN_URL .'assets/css/admin-settings.css');
 		wp_enqueue_style( 'admin-settings-style' );
 
