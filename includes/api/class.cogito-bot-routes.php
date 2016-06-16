@@ -54,7 +54,7 @@ class CogitoBot_Api {
   }
 
   public function buy_cart() {
-    return 'buy_cart';
+    return Buy_Cart_Controller::buy( $this->current_url() );
   }
 
   public function subscribe_app( $request ) {
