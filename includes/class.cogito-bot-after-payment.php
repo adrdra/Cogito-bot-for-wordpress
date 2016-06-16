@@ -6,11 +6,33 @@ class CogitoBot_After_Payment {
   }
 
   public function send_shipping_order( $order_id ) {
+    session_start();
+
     global $woocommerce;
 
     $order = new WC_Order( $order_id );
 
-    print_r($this->get_billing_products( $order ));
+    $billing_data = $this->sanitize_order( $order );
+
+    // print_r(json_encode( $billing_data ));
+
+    wp_remote_post( COGITOAPP_DOMAIN_URL . '/cart-bought/' . $_SESSION['contextId'], $billing_data );
+  }
+
+  public function sanitize_order( $order ) {
+    return array(
+      'method' => 'POST',
+      "body" => array(
+        "recipientName" => $this->get_billing_fullname( $order ),
+        "orderNumber" => $this->get_billing_Number( $order ),
+        "orderUrl" => $this->get_billing_url( $order ),
+        "adjustments" => $this->get_billing_coupons( $order ),
+        "paymentMethod" => $this->get_billing_payment_method( $order ),
+        "summary" => $this->get_billing_summary( $order ),
+        "address" => $this->get_billing_address( $order ),
+        "products" => $this->get_billing_products( $order )
+      )
+    );
   }
 
   private function get_billing_fullname( $order ) {
@@ -35,7 +57,7 @@ class CogitoBot_After_Payment {
 
   private function get_billing_summary( $order ) {
     return array(
-      "subtotal" => 0,
+      "subtotal" => "0",
       "shipping_cost" => $order->order_shipping_tax,
       "total_tax" => $order->order_tax,
       "total_cost" => $order->order_total
@@ -47,7 +69,7 @@ class CogitoBot_After_Payment {
       "street_1" => $order->shipping_address_1,
       "street_2" => $order->shipping_address_2,
       "city" => $order->shipping_city,
-      "state" => $order->shipping_state,
+      "state" => $order->shipping_state || "FR",
       "country" => $order->shipping_country,
       "postal_code" => $order->shipping_postcode
     );
@@ -57,52 +79,15 @@ class CogitoBot_After_Payment {
     $items = $order->get_items();
     $arr = array();
 
-    foreach ( $items as $item ) {
+    foreach ( $items as $key => $item ) {
       array_push($arr, array(
-        "quantity" => $item->quantity,
-        "productId" => $item->id
+        "quantity" => $item['qty'],
+        "productId" => $item['product_id']
       ));
     }
 
     return $arr;
   }
-
-  public function sanitize_order( $customer ) {
-    // return array(
-    //   "recipientName" =>
-    // )
-  }
-//   {
-//   recipientName: 'Anonyme man',
-//   orderNumber: '12302132',
-//   orderUrl: 'http://woocommerce.com/order/id',
-//   adjustments: [
-//     {
-//       name: '',
-//       amount: 0
-//     }
-//   ],
-//   paymentMethod: '',
-//   summary: {
-//     subtotal: 75.00,
-//     shipping_cost: 4.95,
-//     total_tax: 6.19,
-//     total_cost: 56.14
-//   },
-//   address: {
-//     street_1: '1 Hacker Way',
-//     city: 'Menlo Park',
-//     postal_code: '94025',
-//     state: 'CA',
-//     country: 'US'
-//   },
-//   products: [
-//     {
-//       quantity: 1,
-//       productId: 20
-//     }
-//   ],
-// }
 }
 
 return new CogitoBot_After_Payment();

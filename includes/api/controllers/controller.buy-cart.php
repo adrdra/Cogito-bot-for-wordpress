@@ -11,7 +11,7 @@ class Buy_Cart_Controller {
 
     self::add_to_wc_cart( $sanitized_params['data'] );
 
-    wp_redirect( $woocommerce->cart->get_checkout_url() );
+    wp_redirect( $woocommerce->cart->get_checkout_url() . "?context=" . $sanitized_params['contextId'] );
     exit;
   }
 

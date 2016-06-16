@@ -35,6 +35,8 @@ final class CogitoBot {
    */
   protected static $_instance = null;
 
+  protected $_contextId = null;
+
   /**
 	 * CogitoBot Constructor.
 	 */
@@ -57,7 +59,7 @@ final class CogitoBot {
     $this->define( 'COGITO_BOT__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
     $this->define( 'COGITO_BOT__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
     $this->define( 'COGITO_BOT_DELETE_LIMIT', 100000 );
-    $this->define( 'COGITOAPP_DOMAIN_URL', 'http://cogito-bot.herokuapp.com' );
+    $this->define( 'COGITOAPP_DOMAIN_URL', 'https://651649ea.ngrok.io');
     $this->define( 'COGITOBOT_ADMIN_PATH', 'admin.php?page=cogito-admin-page.php');
     $this->define( 'COGITOBOT_CUSTOMER_TYPE', 'woocommerce' );
     $this->define( 'COGITOBOT_SUBSCRIBE_APP_ROUTE', "/wp-json/cogito-plugin/subscribe-app");
@@ -70,6 +72,7 @@ final class CogitoBot {
   private function includes() {
     include_once( 'includes/class.cogito-bot-install.php' );
     include_once( 'includes/class.cogito-bot-after-payment.php' );
+    include_once( 'includes/class.cogito-bot-checkout.php' );
     include_once( 'includes/api/class.cogito-bot-routes.php' );
 
     if ( $this->is_request('admin') ) :
@@ -83,11 +86,6 @@ final class CogitoBot {
    */
   private function init_hooks() {
     register_activation_hook( __FILE__, array( 'CogitoBot_Install', 'install' ) );
-    add_action( 'before_woocommerce_init', array( $this, 'front_install' ));
-  }
-
-  public function front_install() {
-    include_once( 'includes/class.cogito-bot-install.php' );
   }
 
   /**
