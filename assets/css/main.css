@@ -43,6 +43,12 @@ h1 {
   background-color: #ffe814;
   font-size: 16px;
   border-radius: 30px;
+  transition: all .3s ease;
+}
+
+.btn.btn-unactive {
+  background-color: #fafafb;
+  color: #77909d;
 }
 
 .modal-mask {

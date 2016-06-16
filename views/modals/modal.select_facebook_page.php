@@ -8,24 +8,26 @@
 
 <div class="modal-content">
   <div class="select-page">
-    <div class="page-items">
+    <div class="page-items row">
       <?php foreach ($pages as $page) { ?>
         <?php if ( in_array( 'ADMINISTER', $page->perms ) ) : ?>
-          <div class="page-item">
-            <div
-              class="page-icon img-background"
-              id="<?php echo $page->id ?>"
-              data-token="<?php echo $page->access_token ?>"
-              style="background-image: url(<?php echo "http://graph.facebook.com/v2.6/{$page->id}/picture" ?>)">
+          <div class="page-item col-md-3">
+            <span class="border">
+              <div
+                class="page-icon img-background"
+                id="<?php echo $page->id ?>"
+                data-token="<?php echo $page->access_token ?>"
+                style="background-image: url(<?php echo "http://graph.facebook.com/v2.6/{$page->id}/picture" ?>)">
+              </div>
+              <h4><?php echo $page->name ?></h4>
             </div>
-            <span><?php echo $page->name ?></span>
-          </div>
+          </span>
         <?php endif; ?>
       <?php } ?>
     </div>
   </div>
 
-  <a href="#">
-    <span class="btn">Connecter la page</span>
+  <a href="#" class="request-page-subscription">
+    <span class="btn-select-page btn btn-unactive">Connecter la page</span>
   </a>
 </div>
