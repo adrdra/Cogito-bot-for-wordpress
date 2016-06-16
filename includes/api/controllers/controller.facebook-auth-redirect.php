@@ -9,6 +9,7 @@ class Facebook_Auth_Redirect_Controller {
 
     $http_params = http_build_query(array(
       "action" => "select_page",
+      "cogito_id" => $exploded_params['customer']->_id,
       "pages" => json_encode( $exploded_params["pages"] )
     ));
 

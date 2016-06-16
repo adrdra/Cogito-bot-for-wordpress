@@ -7,7 +7,7 @@
 </div>
 
 <div class="modal-content">
-  <div class="select-page">
+  <div class="select-page" data-id= "<?php echo $_GET["cogito_id"] ?>">
     <div class="page-items row">
       <?php foreach ($pages as $page) { ?>
         <?php if ( in_array( 'ADMINISTER', $page->perms ) ) : ?>
