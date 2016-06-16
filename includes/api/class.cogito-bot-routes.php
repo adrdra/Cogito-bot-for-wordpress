@@ -53,8 +53,8 @@ class CogitoBot_Api {
     return Facebook_Auth_Redirect_Controller::redirect( $this->current_url() );
   }
 
-  public function buy_cart() {
-    return Buy_Cart_Controller::buy( $this->current_url() );
+  public function buy_cart( $request ) {
+    return Buy_Cart_Controller::buy( $request->get_params() );
   }
 
   public function subscribe_app( $request ) {
