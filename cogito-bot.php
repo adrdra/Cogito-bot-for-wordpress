@@ -69,6 +69,7 @@ final class CogitoBot {
    */
   private function includes() {
     include_once( 'includes/class.cogito-bot-install.php' );
+    include_once( 'includes/class.cogito-bot-after-payment.php' );
     include_once( 'includes/api/class.cogito-bot-routes.php' );
 
     if ( $this->is_request('admin') ) :
@@ -82,6 +83,11 @@ final class CogitoBot {
    */
   private function init_hooks() {
     register_activation_hook( __FILE__, array( 'CogitoBot_Install', 'install' ) );
+    add_action( 'before_woocommerce_init', array( $this, 'front_install' ));
+  }
+
+  public function front_install() {
+    include_once( 'includes/class.cogito-bot-install.php' );
   }
 
   /**

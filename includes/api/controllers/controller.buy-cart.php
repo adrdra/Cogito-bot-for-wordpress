@@ -2,17 +2,13 @@
 
 class Buy_Cart_Controller {
 
-  public function __construct() {
-    add_action( 'woocommerce_payment_complete', array( $this->send_shipping_order));
-  }
-
   public static function buy( $params ) {
     global $woocommerce;
 
     $sanitized_params = self::sanitize_buy_params( $params );
 
     $woocommerce->cart->empty_cart();
-    
+
     self::add_to_wc_cart( $sanitized_params['data'] );
 
     wp_redirect( $woocommerce->cart->get_checkout_url() );
@@ -32,9 +28,5 @@ class Buy_Cart_Controller {
     foreach ($items as $item) {
       $woocommerce->cart->add_to_cart( $item->productId, $item->quantity );
     }
-  }
-
-  public function send_shipping_order() {
-
   }
 }
