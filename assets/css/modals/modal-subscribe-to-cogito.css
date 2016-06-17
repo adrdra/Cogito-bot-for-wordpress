@@ -37,10 +37,10 @@
 }
 
 .btn-tuto {
-  position: absolute;
-  bottom: 20%;
   margin: auto;
-  left: 25%;
+  display: block;
+  max-width: 235px;
+  margin-top: 50px;
 }
 
 .btn-tuto:hover {
