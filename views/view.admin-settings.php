@@ -57,6 +57,6 @@
   </div>
 
   <?php if ( $_GET['action'] == 'select_page' ) : ?>
-    <?php include_once( 'modals/modal.success_subscribe.php' ); ?>
+    <?php // include_once( 'modals/modal.success_subscribe.php' ); ?>
   <?php endif; ?>
 <?php endif; ?>

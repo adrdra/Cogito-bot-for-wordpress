@@ -3,7 +3,7 @@
 ?>
 
 <div class="modal-title bg-blue">
-  <h3>Selectionnez votre page Facebook</h3>
+  <h3>Sélectionnez votre page Facebook</h3>
 </div>
 
 <div class="modal-content">
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <a href="#" class="request-page-subscription">
+  <a href="#" class="request-page-subscription vertical-center">
     <span class="btn-select-page btn btn-unactive">Connecter la page</span>
   </a>
 </div>

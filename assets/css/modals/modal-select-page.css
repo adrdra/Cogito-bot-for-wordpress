@@ -2,6 +2,7 @@
   width: 80%;
   height: 150px;
   margin: auto;
+  margin-top: 80px;
 }
 
 .pages-items {
@@ -19,6 +20,9 @@
   display: block;
   text-align: center;
   padding-top: 10px;
+  color: #498dd6;
+  font-weight: normal;
+  letter-spacing: 1px;
 }
 
 .page-icon {
@@ -41,4 +45,13 @@
 
 .border.selected {
   border: 3px solid #42b5fc;
+}
+
+.request-page-subscription {
+  bottom: 60px;
+}
+
+.request-page-subscription:hover {
+  text-decoration: none;
+  color: #498dd6;
 }
