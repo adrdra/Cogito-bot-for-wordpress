@@ -44,3 +44,30 @@
   display: block;
   text-align: center;
 }
+
+.stats-panel {
+  width: 80%;
+  height: 600px;
+  background-size: contain !important;
+  max-width: 1000px;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+/*.cards-panel {
+  width: 80%;
+  max-width: 1100px;
+  height: 200px;
+  margin: auto;
+}
+
+.stats {
+  height: 100%;
+  padding: 10px;
+}
+
+.stats div {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}*/

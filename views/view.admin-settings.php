@@ -17,23 +17,29 @@
     <h2 class="title-panel">Statistiques Cogito</h2>
     <span class="date-panel"><?php echo strftime("%A %d %B %Y"); ?></span>
 
-    <div class="stats-panel">
+    <div class="stats-panel img-background" style="background-image: url(<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/dashboard.png' ?>)">
 
     </div>
 
-    <div class="cards-panel">
-      <div class="">
+    <!-- <div class="cards-panel row">
+      <div class="stats col-md-4">
+        <div class="bg-grey">
 
+        </div>
       </div>
 
-      <div class="">
+      <div class="stats col-md-4">
+        <div class="bg-grey">
 
+        </div>
       </div>
 
-      <div class="">
+      <div class="stats col-md-4">
+        <div class="bg-grey">
 
+        </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
