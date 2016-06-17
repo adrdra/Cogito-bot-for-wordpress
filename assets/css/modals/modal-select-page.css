@@ -48,7 +48,10 @@
 }
 
 .request-page-subscription {
-  bottom: 60px;
+  display: block;
+  max-width: 200px;
+  margin: auto;
+  margin-top: 140px;
 }
 
 .request-page-subscription:hover {

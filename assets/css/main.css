@@ -54,6 +54,14 @@ a:focus {
   outline: none !important;
 }
 
+.finish {
+  bottom: 90px;
+  margin: auto;
+  display: block;
+  max-width: 110px;
+  margin-top: 40px;
+}
+
 .btn-transition {
   transition: transform .3s ease;
 }

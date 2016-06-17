@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <a href="#" class="request-page-subscription vertical-center">
+  <a href="#" class="request-page-subscription">
     <span class="btn-select-page btn btn-unactive">Connecter la page</span>
   </a>
 </div>
