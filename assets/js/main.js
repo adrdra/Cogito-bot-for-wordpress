@@ -16,7 +16,7 @@
 			}, 100);
 		});
 
-		$('.modal-mask, .close-modal').click(function() {
+		$('.modal-mask, .close-modal, .finish').click(function() {
 			$('.modal').animate({ opacity: 0 }, 300, function() {
 				$('.modal-mask').animate({
 					opacity: "0"

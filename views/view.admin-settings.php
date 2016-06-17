@@ -42,7 +42,7 @@
 
   </div>
 
-  <div class="modal center">
+  <div class="modal center modal-classic">
     <img class="close-modal" src="<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/check.png' ?>" alt="" />
     <?php
       switch ( $_GET['action'] ) {
@@ -57,6 +57,6 @@
   </div>
 
   <?php if ( $_GET['action'] == 'select_page' ) : ?>
-    <?php // include_once( 'modals/modal.success_subscribe.php' ); ?>
+    <?php include_once( 'modals/modal.success_subscribe.php' ); ?>
   <?php endif; ?>
 <?php endif; ?>

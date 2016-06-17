@@ -146,10 +146,35 @@ h1 {
 }
 
 .modal-hide {
-  top: 80%;
-  transform: scale(1.07);
-  left: 10%;
-  opacity: 0;
+  top: 110% !important;
+  transform: scale(1.07) translate(-50%, -50%);
+  left: 52% !important;
+  opacity: 0 !important;
+}
+
+.modal-title-success {
+  height: 40% !important;
+}
+
+.modal-content-success {
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.modal-content-success h3 {
+  max-width: 370px;
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.modal-content-success .text {
+  max-width: 380px;
+  text-align: center;
+  margin: auto;
+  display: block;
 }
 
 .modal-title {

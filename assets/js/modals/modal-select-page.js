@@ -25,16 +25,17 @@
 			e.preventDefault();
 
 			if ( !data.pageId && !data.pageAccesToken) return;
-			console.log(data)
+
 			$.get(
 				app_url + "/customers/" + customerId + "/page/subscribe",
 				data
 			)
 			.done(function( response ) {
-		    $(".modal-succes").toggleClass('modal-hide');
+				$('.modal-classic').remove();
+				$(".modal-succes").toggleClass('modal-hide');
 		  })
 		  .fail(function( error ) {
-
+				console.log(error)
 		  })
 		});
 	});
