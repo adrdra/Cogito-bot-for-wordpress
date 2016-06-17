@@ -35,7 +35,7 @@ class CogitoBot_Admin_Menus {
 			'manage_cogitobot',
 			'cogito-admin-page.php',
 			array( $this, 'settings_page' ),
-			null,
+			COGITO_BOT__PLUGIN_URL . "assets/img/icon.png",
 			'60'
 		);
 	}
