@@ -6,10 +6,10 @@
   <div class="facebook-connect-instruction col-md-6">
     <ul>
       <li><span>1.</span>
-        <a href="#">Cliquez ici</a> pour vous rendre dans les configurations de votre plugin WooCommerce, <strong>vérifier que l'API Rest est bien activée</strong>.
+        <a href="admin.php?page=wc-settings&tab=api" target="_blank">Cliquez ici</a> pour vous rendre dans les configurations de votre plugin WooCommerce, <strong>vérifier que l'API Rest est bien activée</strong>.
       </li>
       <li><span>2.</span>
-        <a href="#">Cliquez ici</a> pour vous rendre dans la rubrique "Clés/App" pour créer votre clé d'API.
+        <a href="admin.php?page=wc-settings&tab=api&section=keys" target="_blank">Cliquez ici</a> pour vous rendre dans la rubrique "Clés/App" pour créer votre clé d'API.
       </li>
       <li><span>3.</span> Ajouter une nouvelle clé d'API.</li>
       <li><span>4.</span> Renseignez une description (exemple : <strong>Api Cogito</strong>) et sélectionnez les permissions <strong>"Lecture/Écriture"</strong>. Puis générer une nouvelle clé d'API.</li>
