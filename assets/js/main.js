@@ -25,6 +25,17 @@
 				});
 			});
 		});
+
+		$('.a-unsubscribe').click(function(e) {
+			e.preventDefault();
+			$.get('../wp-json/cogito-plugin/unsubscribe-app')
+				.done(function(e) {
+					window.location.replace('admin.php?page=cogito-admin-page.php');
+				})
+				.fail(function(err) {
+					console.log(err)
+				})
+		})
 	});
 
 } ( this, jQuery ));

@@ -16,10 +16,11 @@
 
   <div class="cogito-panel">
     <h2 class="title-panel">Statistiques Cogito</h2>
+
     <span class="date-panel"><?php echo strftime("%A %d %B %Y"); ?></span>
 
-    <a href="#"><span class="btn">Délier votre page</span></a>
-    
+    <a href="#" class="btn-transition a-unsubscribe"><span class="btn btn-unsubscribe">Délier votre page</span></a>
+
     <div class="stats-panel img-background" style="background-image: url(<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/dashboard.png' ?>)">
 
     </div>

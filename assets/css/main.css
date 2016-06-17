@@ -50,6 +50,10 @@ button:focus {outline:0;}
   border: none;
 }
 
+a:focus {
+  outline: none !important;
+}
+
 .btn-transition {
   transition: transform .3s ease;
 }
@@ -106,12 +110,35 @@ h1 {
   background-size: cover;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
 .btn {
   padding: 15px 25px 15px 25px;
   background-color: #ffe814;
   font-size: 16px;
   border-radius: 30px;
   transition: all .3s ease;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+.btn.btn-unsubscribe {
+  background-color: #E53935 !important;
+  color: white !important;
+  opacity: .86;
+}
+
+.a-unsubscribe {
+  display: block;
+  max-width: 185px;
+  margin: auto;
+  margin-top: 45px;
+}
+
+.btn.btn-unsubscribe:hover {
+  opacity: 1;
 }
 
 .btn.btn-unactive {
