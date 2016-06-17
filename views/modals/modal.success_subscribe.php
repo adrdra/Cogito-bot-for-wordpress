@@ -1,5 +1,5 @@
 <div class="modal center modal-hide modal-succes">
-  <div class="modal-title-success">
+  <div class="modal-title-success bg-blue">
     <img src="" alt="" />
   </div>
   <div class="modal-content">

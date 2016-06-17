@@ -43,6 +43,7 @@
   </div>
 
   <div class="modal center">
+    <img class="close-modal" src="<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/check.png' ?>" alt="" />
     <?php
       switch ( $_GET['action'] ) {
         case 'select_page':

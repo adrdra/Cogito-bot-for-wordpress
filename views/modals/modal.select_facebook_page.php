@@ -2,7 +2,7 @@
   $pages = json_decode( explode( 'pages=', urldecode( current_url() ) )[1] );
 ?>
 
-<div class="modal-title">
+<div class="modal-title bg-blue">
   <h3>Selectionnez votre page Facebook</h3>
 </div>
 

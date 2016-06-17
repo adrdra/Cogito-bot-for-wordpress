@@ -1,0 +1,49 @@
+.modal-content {
+  margin: 0;
+}
+
+.facebook-connect-instruction, .facebook-connect-form {
+  padding: 20px;
+  height: 100%;
+}
+
+.facebook-connect-instruction {
+  padding: 40px;
+}
+
+.facebook-connect-form div {
+  height: 80%;
+  width: 80%;
+  padding: 40px;
+}
+
+.facebook-connect-form h3 {
+  margin-top: 30px;
+}
+
+.form-facebook {
+  margin-top: 25px;
+}
+
+.form-facebook input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.form-facebook input[type=submit] {
+  width: 100%;
+}
+
+.btn-tuto {
+  position: absolute;
+  bottom: 20%;
+  margin: auto;
+  left: 25%;
+}
+
+.btn-tuto:hover {
+  text-decoration: none;
+  color: #498dd6;
+}
