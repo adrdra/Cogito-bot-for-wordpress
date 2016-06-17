@@ -12,6 +12,7 @@ class CogitoBot_Api {
     include_once( 'controllers/controller.facebook-auth-redirect.php' );
     include_once( 'controllers/controller.buy-cart.php' );
     include_once( 'controllers/controller.subscribe-app.php' );
+    include_once( 'controllers/controller.unsubscribe-app.php' );
   }
 
   public function register_routes() {
@@ -20,6 +21,7 @@ class CogitoBot_Api {
     $this->facebook_auth_redirect_route($namespace);
     $this->buy_cart_route($namespace);
     $this->subscribe_app_route($namespace);
+    $this->unsubscribe_app_route($namespace);
   }
 
   public function facebook_auth_redirect_route($namespace) {
@@ -49,6 +51,15 @@ class CogitoBot_Api {
     );
   }
 
+  public function unsubscribe_app_route($namespace) {
+    register_rest_route( $namespace, 'unsubscribe-app',
+      array(
+        'methods' => 'GET',
+        'callback'=> array( $this, 'unsubscribe_app' )
+      )
+    );
+  }
+
   public function facebook_auth_redirect( $request ) {
     return Facebook_Auth_Redirect_Controller::redirect( $this->current_url() );
   }
@@ -59,6 +70,10 @@ class CogitoBot_Api {
 
   public function subscribe_app( $request ) {
     return Subscribe_App_Controller::subscribe( $request->get_params() );
+  }
+
+  public function unsubscribe_app() {
+    return Unsubscribe_App_Controller::unsubscribe();
   }
 
   private function current_url() {

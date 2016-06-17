@@ -1,6 +1,7 @@
 <?php setlocale(LC_TIME, "fr_FR"); ?>
 
 <div class="cogito-layout">
+
   <div
     class="cogito-banner img-background"
     style="background-image: url(<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/bandeau.png' ?>)">
@@ -17,6 +18,8 @@
     <h2 class="title-panel">Statistiques Cogito</h2>
     <span class="date-panel"><?php echo strftime("%A %d %B %Y"); ?></span>
 
+    <a href="#"><span class="btn">Délier votre page</span></a>
+    
     <div class="stats-panel img-background" style="background-image: url(<?php echo COGITO_BOT__PLUGIN_URL . 'assets/img/dashboard.png' ?>)">
 
     </div>
